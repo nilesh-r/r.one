@@ -1,0 +1,102 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom base styles */
+@layer base {
+  body {
+    @apply font-sans text-gray-800 bg-gray-50;
+  }
+  
+  h1, h2, h3 {
+    @apply font-bold text-gray-900;
+  }
+  
+  input, select, textarea {
+    @apply w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors;
+  }
+  
+  button {
+    @apply transition-colors duration-200;
+  }
+}
+
+/* Custom component classes */
+@layer components {
+  .btn-primary {
+    @apply bg-indigo-600 text-white py-2 px-4 rounded-lg hover:bg-indigo-700;
+  }
+  
+  .btn-secondary {
+    @apply bg-white text-gray-700 py-2 px-4 border border-gray-300 rounded-lg hover:bg-gray-50;
+  }
+  
+  .card {
+    @apply bg-white rounded-lg shadow-md overflow-hidden;
+  }
+  
+  .toast-success {
+    @apply bg-green-500 text-white;
+  }
+  
+  .toast-error {
+    @apply bg-red-500 text-white;
+  }
+  
+  .appointment-card {
+    @apply bg-blue-100 rounded px-2 py-1 text-xs group relative mb-1;
+  }
+  
+  .modal-overlay {
+    @apply fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50;
+  }
+  
+  .modal-content {
+    @apply bg-white rounded-lg shadow-xl w-full max-w-md;
+  }
+}
+
+/* Custom utilities */
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 0.3s ease-in-out;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  .transition-opacity-visible {
+    transition: opacity 0.2s ease-in-out;
+  }
+}
+
+/* Additional custom styles */
+.calendar-day {
+  @apply min-h-[6rem] p-2 cursor-pointer hover:bg-gray-50 transition-colors border-r border-b border-gray-200;
+}
+
+.calendar-day-outside {
+  @apply text-gray-400 bg-gray-50;
+}
+
+.calendar-day-today {
+  @apply bg-indigo-600 text-white rounded-full w-6 h-6 flex items-center justify-center;
+}
+
+.login-container {
+  @apply min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center px-4;
+}
+
+.login-card {
+  @apply bg-white rounded-xl shadow-2xl p-8 w-full max-w-md;
+}
+
+.header-icon {
+  @apply bg-indigo-100 rounded-lg p-2;
+}
+
+.confirmation-icon {
+  @apply bg-green-100 rounded-full p-4 w-16 h-16 mx-auto mb-4;
+}
